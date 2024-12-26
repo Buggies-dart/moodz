@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:soundbarz/Pages/navigation.dart';
 import 'package:soundbarz/Widgets/favoriteplaylist_page.dart';
 import 'package:soundbarz/Widgets/playlist.dart';
 import 'package:soundbarz/components.dart';
@@ -100,7 +99,7 @@ IconButton(onPressed: (){}, icon: Icon(Icons.add, size: 30, color: white,))
             child: GestureDetector(
 onTap: (){
 Navigator.push(context, MaterialPageRoute(builder: (context){
-return Navigation(child: FavoriteplaylistPage(firstIndex: index,));
+return  FavoriteplaylistPage(firstIndex: index,);
 }));
 },
               child: Row(

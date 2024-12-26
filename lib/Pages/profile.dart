@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:soundbarz/Pages/premium.dart';
 import 'package:soundbarz/Widgets/privacy_policy.dart';
 import 'package:soundbarz/Widgets/t_and_c.dart';
 import 'package:soundbarz/components.dart';
+import 'package:soundbarz/main.dart';
+import 'package:soundbarz/mood_list.dart';
 
-class Profile extends StatefulWidget {
+class Profile extends ConsumerStatefulWidget {
   const Profile({super.key});
 
   @override
-  State<Profile> createState() => _ProfileState();
+  ConsumerState<Profile> createState() => _ProfileState();
 }
 
-class _ProfileState extends State<Profile> {
+class _ProfileState extends ConsumerState<Profile> {
   @override
   Widget build(BuildContext context) {
+final listLength = ref.watch(myNotifProvider);
     final sizeQuery = MediaQuery.of(context).size;
     return Scaffold( backgroundColor: scaffoldColor,
  appBar: AppBar( title: Text('My Profile', style: Textstyling.titleText(),), centerTitle: true,
@@ -53,8 +57,8 @@ Navigator.pop(context);
    SizedBox( height: sizeQuery.height/80),
    Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-    profileInfo('3', 'Moods'),
-    profileInfo('5', 'Playlists'),
+    profileInfo( selectedMoods.length.toString(), 'Moods'),
+    profileInfo(listLength.favorites.length.toString(), 'Playlists'),
     profileInfo('10', 'Favorites'),
    ],)
    ],
@@ -88,7 +92,7 @@ children: [
   ListTile( onTap: onPressed,
     title: Text(text, style: Textstyling.subtitleText(),),
     ),
-Divider( thickness: 0.7,)  ],
+Divider( thickness: 0.5,)  ],
 );
   }
 
