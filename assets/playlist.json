@@ -1,0 +1,284 @@
+{
+  "playlists": [
+    {
+      "title": "Feel-Good Vibes",
+      "mood": "Happy",
+      "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1733389396/pexels-magda-ehlers-pexels-1585221_m5jhmy.jpg",
+      "songs": [
+        {
+          "title": "Happy",
+          "artist": "Pharrell Williams",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1733400260/happy_fih5wy.jpg",
+          "duration": "3:53"
+        },
+        {
+          "title": "Essence",
+          "artist": "Wizkid ft. Tems",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735000447/essence_kx8lcl.png",
+          "duration": "4:08"
+        },
+        {
+          "title": "Can't Stop the Feeling!",
+          "artist": "Justin Timberlake",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735000543/cttf_mfvncl.jpg",
+          "duration": "3:56"
+        },
+        {
+          "title": "Walking on Sunshine",
+          "artist": "Katrina and the Waves",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735000631/woss_fkxqdv.jpg",
+          "duration": "3:59"
+        },
+        {
+          "title": "Ye",
+          "artist": "Burna Boy",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735000707/ye_zg2aau.jpg",
+          "duration": "3:52"
+        }
+      ]
+    },
+    {
+      "title": "Sunshine Tunes",
+      "mood": "Happy",
+      "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1733389811/burna_boy_image_text_msfy2a.png",
+      "songs": [
+        {
+          "title": "Best Day of My Life",
+          "artist": "American Authors",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735000820/boml_ba0821.jpg",
+          "duration": "3:14"
+        },
+        {
+          "title": "I Wanna Dance with Somebody",
+          "artist": "Whitney Houston",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735000934/iwdwsmbdy_vsjrfl.jpg",
+          "duration": "4:52"
+        },
+        {
+          "title": "Buga",
+          "artist": "Kizz Daniel ft. Tekno",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735001014/buga_zycf0n.jpg",
+          "duration": "3:45"
+        },
+        {
+          "title": "Levitating",
+          "artist": "Dua Lipa",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735001164/levitating_kptiwb.jpg",
+          "duration": "3:23"
+        },
+        {
+          "title": "Kilometre",
+          "artist": "Burna Boy",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735001249/kilo_s5mvar.jpg",
+          "duration": "2:33"
+        }
+      ]
+    },
+    {
+      "title": "Laid-Back Grooves",
+      "mood": "Relaxed",
+      "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1733390074/pexels-budgeron-bach-5157200_b6nq8u.jpg",
+      "songs": [
+        {
+          "title": "True Love",
+          "artist": "Wizkid",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735001342/tl_lajpaz.jpg",
+          "duration": "4:09"
+        },
+        {
+          "title": "Let Her Go",
+          "artist": "Passenger",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735001410/lhg_jwzum6.jpg",
+          "duration": "4:12"
+        },
+        {
+          "title": "Stay With Me",
+          "artist": "Sam Smith",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735001543/swm_eq8aix.jpg",
+          "duration": "2:52"
+        },
+        {
+          "title": "Duduke",
+          "artist": "Simi",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735001617/ddk_y1ucgh.jpg",
+          "duration": "3:34"
+        },
+        {
+          "title": "Someone Like You",
+          "artist": "Adele",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735001708/sly_bktrym.jpg",
+          "duration": "4:45"
+        }
+      ]
+    },
+    {
+      "title": "Unwind and Chill",
+      "mood": "Relaxed",
+      "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1733390265/631609028e8b5_sjrtg4.jpg",
+      "songs": [
+        {
+          "title": "Ocean Eyes",
+          "artist": "Billie Eilish",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735003969/oceaneyes_xsvmo4.jpg",
+          "duration": "3:20"
+        },
+        {
+          "title": "Nobody",
+          "artist": "DJ Neptune ft. Joeboy",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735004080/nbd_a7xzuv.jpg",
+          "duration": "3:31"
+        },
+        {
+          "title": "Thinking Out Loud",
+          "artist": "Ed Sheeran",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735004147/TOL_gr7tu3.jpg",
+          "duration": "4:41"
+        },
+        {
+          "title": "Fallin'",
+          "artist": "Alicia Keys",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735004266/fallin_e6pvwv.jpg",
+          "duration": "3:30"
+        },
+        {
+          "title": "Away",
+          "artist": "Ayra Starr",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735004330/away_fshm84.jpg",
+          "duration": "3:04"
+        }
+      ]
+    },
+    {
+      "title": "Workout Beats",
+      "mood": "Workout",
+      "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1733388299/pexels-victorfreitas-841130_hzgfty.jpg",
+      "songs": [
+        {
+          "title": "Lose Yourself",
+          "artist": "Eminem",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735004462/lys_xpyoa6.jpg",
+          "duration": "5:26"
+        },
+        {
+          "title": "Uptown Funk",
+          "artist": "Mark Ronson ft. Bruno Mars",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735004547/uf_xfbk5w.jpg",
+          "duration": "4:30"
+        },
+        {
+          "title": "On Top of the World",
+          "artist": "Imagine Dragons",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735004612/ototw_ip8ueu.jpg",
+          "duration": "3:10"
+        },
+        {
+          "title": "Bounce",
+          "artist": "Ruger",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735004732/Bounce_gdlfaj.jpg",
+          "duration": "3:38"
+        },
+        {
+          "title": "Montero (Call Me By Your Name)",
+          "artist": "Lil Nas X",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735004832/Monteiro_bq7kky.jpg",
+          "duration": "2:18"
+        }
+      ]
+    },
+    {
+      "title": "Get Moving!",
+      "mood": "Workout",
+      "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1733388542/pexels-eduardo-romero-817034-1886487_nrdi1z.jpg",
+      "songs": [
+        {
+          "title": "Stronger",
+          "artist": "Kanye West",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735004928/stronger_y7lyh1.jpg",
+          "duration": "5:11"
+        },
+        {
+          "title": "Party Rock Vibes",
+          "artist": "LMFAO",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735005037/pra_nc0cvh.jpg",
+          "duration": "4:23"
+        },
+        {
+          "title": "Koroba",
+          "artist": "Tiwa Savage",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735005157/koroba_ol1lx0.jpg",
+          "duration": "3:17"
+        },
+        {
+          "title": "Blinding Lights",
+          "artist": "The Weeknd",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735005234/blindinglights_ee8bi0.jpg",
+          "duration": "3:20"
+        },
+        {
+          "title": "Ginger",
+          "artist": "Wizkid ft. Burna Boy",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735025001/ginger_wtbjeo.jpg",
+          "duration": "3:13"
+        }
+      ]
+    },
+    {
+      "title": "Heartfelt Ballads",
+      "mood": "Love and Romance",
+      "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1733388641/pexels-jjskorupski-4418531_eyneil.jpg",
+      "songs": [
+        {
+          "title": "Perfect",
+          "artist": "Ed Sheeran",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735005394/perfect_fh5c0p.jpg",
+          "duration": "4:23"
+        },
+        {
+          "title": "For You",
+          "artist": "Teni ft. Davido",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735025134/fy_juw2rg.jpg",
+          "duration": "3:57"
+        },
+        {
+          "title": "Love Nwantiti",
+          "artist": "CKay",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735025193/love_nwa_eaxskw.jpg",
+          "duration": "2:22"
+        },
+        {
+          "title": "All of Me",
+          "artist": "John Legend",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735025248/aom_cmiycp.jpg",
+          "duration": "4:30"
+        },
+        {
+          "title": "Nobody Else But You",
+          "artist": "Trey Songz",
+          "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735025331/nbeby_hup8rl.jpg",
+          "duration": "3:48"
+        }
+      ]
+    },
+    {
+      "title": "Romantic Nights",
+      "mood": "Love and Romance",
+      "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1733388810/pexels-edwardeyer-4395196_bkxihw.jpg",
+      "songs": [
+        { "title": "Thinking Bout You", "artist": "Frank Ocean", 
+      "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735025432/tay_phhmzy.jpg", 
+        "duration": "3:46" },
+        { "title": "Slow Burn", "artist": "Kacey Musgraves",
+         "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735025506/slb_quwrco.jpg", "duration": "4:25"},
+        { "title": "Breathe Again", "artist": "Toni Braxton",
+         "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735025580/ba_cijmi5.jpg", "duration": "2:37" },
+        { "title": "Sweetest Taboo", "artist": "Sade",
+        "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735025666/tst_ft4wu3.jpg", "duration": "5:02" },
+        { "title": "Jowo", "artist": "Davido", 
+        "coverImage": "https://res.cloudinary.com/dnkcbhh4n/image/upload/v1735025804/jowo_p58nne.pnghttps://res.cloudinary.com/dnkcbhh4n/image/upload/v1733400260/happy_fih5wy.jpg",  "duration": "3:28"}
+      ]
+    }
+  ]
+}
+
+
+
