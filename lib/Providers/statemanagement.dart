@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:soundbarz/JSON%20Model/data_loader.dart';
@@ -46,7 +45,7 @@ static final suggestSongs = FutureProvider((ref) async{
 final playlists = await DataLoader.loadPlaylists();
   final filteredPlaylists = playlists.where((playlist) => moods.contains(playlist.mood)).toList();
   List<Song> allSongs = filteredPlaylists.expand((playlist) => playlist.songs).toList();
-allSongs.shuffle(Random());
+// allSongs.shuffle(Random());
 return allSongs;
 });
 

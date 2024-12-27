@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:soundbarz/Providers/statemanagement.dart';
+import 'package:soundbarz/Widgets/song_page.dart';
 import 'package:soundbarz/components.dart';
 import 'package:just_audio/just_audio.dart';
 
@@ -119,52 +120,58 @@ const SnackBar(content: Text("Failed to play the song")),
                         final isCurrentSongPlaying = _currentlyPlayingPath == 'assets/song/sample.mp3' && isPlaying;
                         return Column(
                           children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                CircleAvatar(
-                                  backgroundImage: NetworkImage(song.coverImage),
-                                  radius: 30,
-                                ),
-                                SizedBox(width: sizeQuery.width / 15),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        song.title,
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 1,
-                                      ),
-                                      Text(
-                                        song.artist,
-                                        style: const TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ],
+                  GestureDetector( onTap: (){
+Navigator.push(context, MaterialPageRoute(builder: (context){
+return SongPage(audioAsset: song.songUrl, index: index );
+}));
+                            },
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  CircleAvatar(
+                                    backgroundImage: NetworkImage(song.coverImage),
+                                    radius: 30,
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 8),
-                                  child: IconButton(
-                                    onPressed: () {
-                                      _playSong('assets/song/sample.mp3');
-                                    },
-                                    icon: Icon(
-                                      isCurrentSongPlaying
-                                          ? Icons.pause_circle_filled
-                                          : Icons.play_circle_fill,
-                                      color: secondaryAssetColor,
+                                  SizedBox(width: sizeQuery.width / 15),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          song.title,
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                        ),
+                                        Text(
+                                          song.artist,
+                                          style: const TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                ),
-                              ],
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 8),
+                                    child: IconButton(
+                                      onPressed: () {
+                                        _playSong('assets/song/sample.mp3');
+                                      },
+                                      icon: Icon(
+                                        isCurrentSongPlaying
+                                            ? Icons.pause_circle_filled
+                                            : Icons.play_circle_fill,
+                                        color: secondaryAssetColor,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                             const Padding(
                               padding: EdgeInsets.only(left: 8, right: 8, bottom: 8),

@@ -4,10 +4,11 @@ class Song{
   final String title;
   final String artist;
   final String coverImage;
+  final String songUrl;
 
-Song({ required this.title, required this.artist, required this.coverImage});
+Song({ required this.title, required this.artist, required this.coverImage, required this.songUrl});
 factory Song.fromJson(Map <String, dynamic> json){
-  return Song(title: json['title'], artist: json['artist'], coverImage: json['coverImage']);
+  return Song(title: json['title'], artist: json['artist'], coverImage: json['coverImage'], songUrl: json['song_url']);
 }
 }
 

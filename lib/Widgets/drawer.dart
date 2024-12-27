@@ -54,7 +54,7 @@ return Profile();
    ),
      ),
     SizedBox( height: sizeQuery.height/40,),
-tiles(sizeQuery, Icons.playlist_play_sharp, 'My Playlists', Text(''),
+tiles(sizeQuery, Icons.playlist_play_sharp, 'Library', Text(''),
 (){Navigator.push(context, MaterialPageRoute(builder: (context){
 return Userplaylist();
 }));

@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:soundbarz/Providers/statemanagement.dart';
 import 'package:soundbarz/components.dart';
 
-class SongPage extends StatefulWidget {
-  final String audioAsset; // Path to the audio file in your assets folder
-
-  const SongPage({super.key, required this.audioAsset});
-
+class SongPage extends ConsumerStatefulWidget {
+  final String audioAsset;
+  final int index;
+  const SongPage({super.key, required this.audioAsset, required this.index});
   @override
-  State<SongPage> createState() => _SongPageState();
+  ConsumerState<SongPage> createState() => _SongPageState();
 }
 
-class _SongPageState extends State<SongPage> {
+class _SongPageState extends ConsumerState<SongPage> {
   late AudioPlayer _audioPlayer;
   bool isPlaying = false;
   bool isTapped = false;
-  List<double> barHeights = List.generate(20, (index) => 10.0); // Initial heights for the bars
+  List<double> barHeights = List.generate(20, (index) => 10.0); 
 
   @override
   void initState() {
@@ -27,12 +28,14 @@ class _SongPageState extends State<SongPage> {
 
   Future<void> _initializeAudio() async {
     try {
-      await _audioPlayer.setAsset(widget.audioAsset); // Use setAsset for local files
+      await _audioPlayer.setUrl(widget.audioAsset); 
     } catch (e) {
-      
-      ScaffoldMessenger.of(context).showSnackBar(
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Failed to load audio")),
       );
+      }
+      
     }
     _audioPlayer.positionStream.listen((duration) {
       _updateVisualizer(duration);
@@ -67,12 +70,15 @@ class _SongPageState extends State<SongPage> {
 
   @override
   Widget build(BuildContext context) {
+  final suggestSongsPage = ref.watch(Providers.suggestSongs);
     final sizeQuery = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: scaffoldColor,
       appBar: AppBar(
         title: Text("Now Playing", style: Textstyling.titleText()),centerTitle: true,
-leading: IconButton( onPressed: () {}, icon: Icon(Icons.arrow_back_ios, color: white),
+leading: IconButton( onPressed: () {
+Navigator.pop(context);
+}, icon: Icon(Icons.arrow_back_ios, color: white),
 ),
 actions: [
 IconButton( onPressed: showMenus, icon: Icon( MdiIcons.dotsVertical,
@@ -81,7 +87,12 @@ IconButton( onPressed: showMenus, icon: Icon( MdiIcons.dotsVertical,
           ),
         ],
       ),
-body: Column( mainAxisAlignment: MainAxisAlignment.center,
+body: suggestSongsPage.when(data: (songs){
+final songIndex = songs[widget.index];
+if (songs.isEmpty) {
+ return const Center(child: Text('No songs available.'));
+}
+ return Column( mainAxisAlignment: MainAxisAlignment.center,
 children: [
           // Progress Bar
   StreamBuilder<Duration?>( stream: _audioPlayer.positionStream, builder: (context, snapshot) {
@@ -97,7 +108,7 @@ backgroundColor: Colors.grey[300], valueColor:  AlwaysStoppedAnimation<Color>(se
  ),
 Positioned.fill( child: Center( child: SizedBox( height: sizeQuery.height / 3 - 3, width: sizeQuery.width / 0.9 - 3,
 child: CircleAvatar(
- backgroundImage: AssetImage( 'assets/images/chips_sauce.jpg', // Replace with your image path
+ backgroundImage: NetworkImage( songIndex.coverImage, // Replace with your image path
 ),
  ),
  ),
@@ -146,9 +157,9 @@ final position = snapshot.data ?? Duration.zero; final total = _audioPlayer.dura
             ),
           ),
           SizedBox(height: sizeQuery.height / 60),
-          Text('Black Or White', style: Textstyling.subtitleText()),
+          Text( songIndex.title, style: Textstyling.subtitleText()),
           Text(
-            'Michael Jackson • Feel Good Anthems • Happy',
+            '${songIndex.artist} • Feel Good Anthems • Happy',
             style: TextStyle(color: white),
           ),
   Padding(
@@ -174,7 +185,11 @@ songsFunction(Icon(MdiIcons.heart, size: 25, color: Colors.white), (){}, 'Favori
 songsFunction(Icon(MdiIcons.share, size: 25, color: Colors.white), (){}, 'Share'),
         ],
       )  ],
-      ),
+      );
+}, error: (error, stack)=> Center(
+child: Text('No Info Available For This Song', style: Textstyling.subtitleText(),),
+), loading: ()=> Text(''))
+
     );
   }
 

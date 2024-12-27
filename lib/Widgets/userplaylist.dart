@@ -20,7 +20,7 @@ final addedPlaylists = ref.watch(myNotifProvider).favorites;
     final sizeQuery = MediaQuery.of(context).size;
     return  Scaffold(
     appBar: AppBar(
-  title: Text('Your Playlists' ,style: Textstyling.titleTextXL(),), centerTitle: false, leading: Padding(
+  title: Text('Your Library' ,style: Textstyling.titleTextXL(),), centerTitle: false, leading: Padding(
     padding: const EdgeInsets.only(left: 10),
     child: CircleAvatar( backgroundColor: secondaryAssetColor, radius: 45,
       child: Text('B', style: TextStyle( fontSize: 40, fontWeight: FontWeight.bold, color: white),),),
