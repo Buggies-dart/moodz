@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:soundbarz/Providers/statemanagement.dart';
 import 'package:soundbarz/Widgets/song_page.dart';
 import 'package:soundbarz/components.dart';
-import 'package:just_audio/just_audio.dart';
+import 'package:soundbarz/main.dart';
 
 class AllSongs extends ConsumerStatefulWidget {
   const AllSongs({super.key});
@@ -13,41 +13,42 @@ class AllSongs extends ConsumerStatefulWidget {
 }
 
 class _AllSongsState extends ConsumerState<AllSongs> {
-  final AudioPlayer _audioPlayer = AudioPlayer();
-  String? _currentlyPlayingPath;
-  bool isPlaying = false;
+  // final AudioPlayer _audioPlayer = AudioPlayer();
+  // String? _currentlyPlayingPath;
+  // bool isPlaying = false;
 
-  Future<void> _playSong(String path) async {
-    try {
-      if (_currentlyPlayingPath == path && isPlaying) {
-        await _audioPlayer.pause();
- if (mounted) {
-setState(() { isPlaying = false;});  
-}
-} else { await _audioPlayer.setAsset(path);
-await _audioPlayer.play();
- if (mounted) {
- setState(() {
-_currentlyPlayingPath = path;
-isPlaying = true;
-});
- }
- }
-} catch (e) { if (mounted) {
- ScaffoldMessenger.of(context).showSnackBar(
-const SnackBar(content: Text("Failed to play the song")),
-);
-}
-    }
-  }
+//   Future<void> _playSong(String path) async {
+//     try {
+//       if (_currentlyPlayingPath == path && isPlaying) {
+//         await _audioPlayer.pause();
+//  if (mounted) {
+// setState(() { isPlaying = false;});  
+// }
+// } else { await _audioPlayer.setUrl(path);
+// await _audioPlayer.play();
+//  if (mounted) {
+//  setState(() {
+// _currentlyPlayingPath = path;
+// isPlaying = true;
+// });
+//  }
+//  }
+// } catch (e) { if (mounted) {
+//  ScaffoldMessenger.of(context).showSnackBar(
+// const SnackBar(content: Text("Failed to play the song")),
+// );
+// }
+//     }
+//   }
 
   @override
   Widget build(BuildContext context) {
+  final songPlay = ref.watch(playSongProvider);
     final sizeQuery = MediaQuery.of(context).size;
 
     // Subscribe to the suggestSongs FutureProvider
     final songsAsyncValue = ref.watch(Providers.suggestSongs);
-
+debugPrint("SuggestSongsPage loading state: ${songsAsyncValue.isLoading}");
     return Scaffold(
       backgroundColor: scaffoldColor,
       body: SafeArea(
@@ -117,12 +118,12 @@ const SnackBar(content: Text("Failed to play the song")),
                       itemCount: songs.length > 25 ? 25 : songs.length,
                       itemBuilder: (context, index) {
                         final song = songs[index];
-                        final isCurrentSongPlaying = _currentlyPlayingPath == 'assets/song/sample.mp3' && isPlaying;
+                        final isCurrentSongPlaying = songPlay.currentlyPlayingPath == song.songUrl && songPlay.isPlaying;
                         return Column(
                           children: [
                   GestureDetector( onTap: (){
 Navigator.push(context, MaterialPageRoute(builder: (context){
-return SongPage(audioAsset: song.songUrl, index: index );
+return SongPage(audioAsset: 'assets/song/sample.mp3', index: index );
 }));
                             },
                               child: Row(
@@ -160,7 +161,7 @@ return SongPage(audioAsset: song.songUrl, index: index );
                                     padding: const EdgeInsets.only(right: 8),
                                     child: IconButton(
                                       onPressed: () {
-                                        _playSong('assets/song/sample.mp3');
+                                        songPlay.playSong(song.songUrl, context);
                                       },
                                       icon: Icon(
                                         isCurrentSongPlaying
