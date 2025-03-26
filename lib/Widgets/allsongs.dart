@@ -123,7 +123,7 @@ debugPrint("SuggestSongsPage loading state: ${songsAsyncValue.isLoading}");
                           children: [
                   GestureDetector( onTap: (){
 Navigator.push(context, MaterialPageRoute(builder: (context){
-return SongPage(audioAsset: 'assets/song/sample.mp3', index: index );
+return SongPage(audioAsset: song.songUrl, index: index );
 }));
                             },
                               child: Row(

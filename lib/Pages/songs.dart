@@ -32,7 +32,7 @@ scaffoldKey.currentState?.openDrawer();
         Text('PlayLists', style: Textstyling.subtitleText()),
         Text('Moods', style: Textstyling.subtitleText())
         ],
-       indicatorColor: secondaryAssetColor,  dividerHeight: 0,),
+       indicatorColor: secondaryAssetColor,  dividerHeight: 0.5),
         ),
      body: const TabBarView(children: [
 AllSongs(), 

@@ -19,34 +19,37 @@ class _SongPageState extends ConsumerState<SongPage> {
   bool isPlaying = false;
   bool isTapped = false;
   List<double> barHeights = List.generate(20, (index) => 10.0);
-
+ Future<void>? audioInit;
   @override
   void initState() {
     super.initState();
     _audioPlayer = AudioPlayer();
-    _initializeAudio();
+    audioInit = _initializeAudio();
   }
 
-  Future<void> _initializeAudio() async {
-    try {
-      await _audioPlayer.setAsset(widget.audioAsset);
-    } catch (e, stackTrace) {
-      debugPrint('Error initializing audio: $e\n$stackTrace');
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Failed to load audio")),
-        );
-      }
-    }
+ Future<void> _initializeAudio() async {
+  try {
+    await _audioPlayer.setUrl(widget.audioAsset);
     _audioPlayer.positionStream.listen((duration) {
-      _updateVisualizer(duration);
+      if (mounted) {
+        _updateVisualizer(duration);
+      }
     });
+  } catch (e, stackTrace) {
+    debugPrint('Error initializing audio: $e\n$stackTrace');
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Failed to load audio")),
+      );
+    }
   }
+}
 
   @override
   void dispose() {
-    _audioPlayer.dispose();
-    super.dispose();
+ _audioPlayer.stop(); 
+  _audioPlayer.dispose(); 
+  super.dispose();
   }
 
   void _togglePlayPause() {
@@ -168,7 +171,7 @@ class _SongPageState extends ConsumerState<SongPage> {
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
                 child: Align(
                   alignment: Alignment.center,
-                  child: Container(
+                  child: SizedBox(
                     height: 50,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,

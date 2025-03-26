@@ -7,25 +7,38 @@ class Playsongs with ChangeNotifier {
   String? currentlyPlayingPath;
 
   Future<void> playSong(String path, BuildContext context) async {
-    try {
-      if (currentlyPlayingPath == path && isPlaying) {
+  try {
+    // Check if the currently playing song is the same as the requested one
+    if (currentlyPlayingPath == path) {
+      if (isPlaying) {
+        // If already playing, pause the song
         await _audioPlayer.pause();
         isPlaying = false;
-        notifyListeners(); 
+        debugPrint('Paused: $currentlyPlayingPath');
       } else {
-        await _audioPlayer.setUrl(path);
+        // If paused, resume the song
         await _audioPlayer.play();
-        currentlyPlayingPath = path;
         isPlaying = true;
-        notifyListeners(); 
+        debugPrint('Resumed: $currentlyPlayingPath');
       }
-    } catch (e) {
-      if (context.mounted) {
+    } else {
+      // Stop the current song, load the new song, and play
+      await _audioPlayer.stop(); // Stop any currently playing song
+      await _audioPlayer.setUrl(path);
+      await _audioPlayer.play();
+      currentlyPlayingPath = path;
+      isPlaying = true;
+      debugPrint('Playing: $currentlyPlayingPath');
+    }
+
+    notifyListeners(); // Notify listeners about the state change
+  } catch (e) {
+    debugPrint('Error playing song: $e');
+    if (context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Failed to play the song")),
-      );   
-      }
-     
+      );
     }
   }
+}
 }

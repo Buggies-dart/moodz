@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       
-     title: 'SoundBarz',
+     title: 'Moodz',
      debugShowCheckedModeBanner: false,
      home: const SplashScreen()
     );
