@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:soundbarz/JSON%20Model/data_loader.dart';
-import 'package:soundbarz/JSON%20Model/playlist_model.dart';
+import 'package:soundbarz/Model/data_loader.dart';
+import 'package:soundbarz/Model/playlist_model.dart';
 import 'package:soundbarz/mood_list.dart';
 
 class Providers{

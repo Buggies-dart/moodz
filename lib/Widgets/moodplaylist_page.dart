@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:soundbarz/JSON%20Model/data_loader.dart';
-import 'package:soundbarz/JSON%20Model/playlist_model.dart';
+import 'package:soundbarz/Model/data_loader.dart';
+import 'package:soundbarz/Model/playlist_model.dart';
 import 'package:soundbarz/Widgets/playlistpage_moods.dart';
 import 'package:soundbarz/components.dart';
 
