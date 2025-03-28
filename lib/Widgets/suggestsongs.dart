@@ -23,7 +23,7 @@ class SuggestSongs extends ConsumerWidget {
 
         return SizedBox(
           height: sizeQuery.height / 2, // Specify height to avoid constraint issues
-          child: ListView.builder(
+          child: ListView.builder( physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             scrollDirection: Axis.vertical, // For vertical scrolling
             itemCount: songs.length > 7 ? 7 : songs.length, // Limit to 7 items

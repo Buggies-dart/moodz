@@ -54,12 +54,12 @@ Navigator.pop(context);
     ), 
     ),
    ),
-   SizedBox( height: sizeQuery.height/80),
+   
    Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
     profileInfo( selectedMoods.length.toString(), 'Moods'),
     profileInfo(listLength.favorites.length.toString(), 'Playlists'),
-    profileInfo('10', 'Favorites'),
+    profileInfo('0', 'Favorites'),
    ],)
    ],
    ),

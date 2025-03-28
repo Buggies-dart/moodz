@@ -18,18 +18,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        scaffoldBackgroundColor: scaffoldColor,
-        appBarTheme: const AppBarTheme( 
-      backgroundColor: scaffoldColor
-        )
-      ),
+return MaterialApp(
+theme: ThemeData(
+scaffoldBackgroundColor: scaffoldColor, appBarTheme: const AppBarTheme( 
+backgroundColor: scaffoldColor
+)
+),
       
-     title: 'Moodz',
-     debugShowCheckedModeBanner: false,
-     home: const SplashScreen()
-    );
+title: 'Moodz',
+debugShowCheckedModeBanner: false,
+home: const SplashScreen()
+);
   }
 }
 

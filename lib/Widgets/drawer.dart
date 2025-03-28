@@ -22,7 +22,7 @@ bool isSwitched = false;
       child: Column(
       children: [
      Container( color: scaffoldColor,
-    width: double.infinity, height: sizeQuery.height/6.8,
+    width: double.infinity, height: sizeQuery.height/6.3,
    child:  Column(
     children: [
     SizedBox( height: sizeQuery.height/50,),
@@ -43,7 +43,7 @@ bool isSwitched = false;
 Navigator.push(context, MaterialPageRoute(builder: (context){
 return Profile();
 }));
-                   }, child: const Text('View Profile', style: TextStyle(color: white),
+}, child: const Text('View Profile', style: TextStyle(color: white),
               )
               )   ],
            ),
